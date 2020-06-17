@@ -2,7 +2,7 @@
 // @id             iitc-plugin-superdata@anonymous_in_sf
 // @name           IITC plugin: Load a lot more portals/links
 // @category       Info
-// @version        0.0.1.20170312
+// @version        0.0.2
 // @namespace      https://github.com/jonatkins/ingress-intel-total-conversion
 // @updateURL      https://github.com/clavelm/iitc-plugins/raw/master/superdata.user.js
 // @downloadURL    https://github.com/clavelm/iitc-plugins/raw/master/superdata.user.js
