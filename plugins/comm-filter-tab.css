@@ -1,0 +1,88 @@
+#chat td.system_narrowcast {
+  color: #f66;
+}
+
+#chatall tr.faction td:nth-child(3):before,
+#chatalerts tr.faction td:nth-child(3):before,
+#chatfilter tr.faction td:nth-child(3):before {
+  content: '[faction]';
+  color: #f88;
+  background-color: #500;
+  margin-right: .2rem;
+}
+
+#chatall tr.public td:nth-child(3):before,
+#chatalerts tr.public td:nth-child(3):before,
+#chatfilter tr.public td:nth-child(3):before {
+  content: '[public]';
+  color: #ff6;
+  background-color: #550;
+  margin-right: .2rem;
+}
+
+#chat .portal.enl-light {
+  color: #5e5;
+}
+
+#chat .portal.res-light {
+  color: #2de;
+}
+
+.pl_nudge_date {
+  float: unset;
+  text-align: unset;
+  border: unset;
+  background: unset;
+  display: unset;
+  height: unset;
+  font-weight: bold;
+}
+
+#chat #chat-filters {
+	overflow: unset;
+	height: unset;
+	padding: unset;
+}
+
+#chat-filters.desktop {
+  z-index: 1;
+}
+
+#chat-filters.desktop #filter-type:hover {
+  margin-bottom: -8em;
+  height: 10em;
+}
+
+#chatfilter table {
+  margin-bottom: 2.5rem;
+}
+
+#chat .divider {
+  color: #bbb;
+}
+
+#chat .divider td:nth-child(2) {
+  text-align: center;
+}
+
+#chat tr:nth-child(odd) {
+  background-color: #0002
+}
+
+#chat tr {
+  border-bottom: 1px solid #5558;
+}
+
+#chat td {
+  padding-bottom: 2px;
+  padding-top: 2px;
+}
+
+#chat table {
+  table-layout: unset;
+}
+
+#chat td:first-child,
+#chat td:nth-child(2) {
+  width: unset;
+}
