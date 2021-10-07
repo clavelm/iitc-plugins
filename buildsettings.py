@@ -69,9 +69,10 @@ builds = {  # every build entry extends common defaults
         'post_build': ['build_mobile.py'],
     },
 
-    'lejeu': {
-        'url_dist_base': 'https://le-jeu.github.io/iitc-plugins',
-        'update_file': '.user.js',
+    'dw235': {
+        'url_dist_base': 'https://github.com/clavelm/iitc-plugins/raw/dist',
+        'update_file': ['.user.js', '.meta.js'],
+        'version_timestamp': False,
     },
 
     # publish your own fork of the project, and host it on your own web site
