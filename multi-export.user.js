@@ -3,7 +3,7 @@
 // @id              iitc-plugin-portal-multi-export
 // @name            IITC plugin: IITC plugin: Portal Multi Export
 // @category        Misc
-// @version         0.11
+// @version         0.11.1
 // @namespace       https://github.com/jonatkins/ingress-intel-total-conversion
 // @description     Export portals from bookmarks, current view or polygon
 // @updateURL      https://github.com/clavelm/iitc-plugins/raw/dist/multi-export.meta.js
@@ -19,7 +19,7 @@ if(typeof window.plugin !== 'function') window.plugin = function() {};
 //PLUGIN AUTHORS: writing a plugin outside of the IITC build environment? if so, delete these lines!!
 //(leaving them in place might break the 'About IITC' page or break update checks)
 plugin_info.buildName = 'dw235';
-plugin_info.dateTimeVersion = '2021-10-08-170506';
+plugin_info.dateTimeVersion = '2021-10-08-183831';
 plugin_info.pluginId = 'multi-export';
 //END PLUGIN AUTHORS NOTE
 
