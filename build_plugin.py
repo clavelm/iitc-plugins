@@ -9,6 +9,7 @@ from functools import partial
 from importlib import import_module
 from mimetypes import guess_type
 from pathlib import Path
+from glob import glob
 
 import settings
 
@@ -193,7 +194,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('build', type=str, nargs='?',
                         help='Specify build name')
-    parser.add_argument('sources', type=Path, nargs='+',
+    parser.add_argument('sources', type=str, nargs='+',
                         help='Specify source file name')
     parser.add_argument('--out-dir', type=Path, nargs='?',
                         help='Specify out directory')
@@ -208,7 +209,9 @@ if __name__ == '__main__':
     if not args.out_dir.is_dir():
         parser.error('Out directory not found: {.out_dir}'.format(args))
 
-    for source in args.sources:
+    sources = [Path(f) for files in args.sources for f in glob(files)]
+    for source in sources:
+        print(source)
         if not source.is_file():
             parser.error('Source file not found: {}'.format(source))
 
