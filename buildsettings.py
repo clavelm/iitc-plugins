@@ -75,6 +75,12 @@ builds = {  # every build entry extends common defaults
         'version_timestamp': False,
     },
 
+    'dw235dev': {
+        'url_dist_base': 'https://github.com/clavelm/iitc-plugins/raw/dist',
+        'update_file': '.user.js',
+        'version_timestamp': True,
+    },
+
     # publish your own fork of the project, and host it on your own web site
     # 'myfork': {
     #    'url_homepage': 'https://www.example.com/iitc',
