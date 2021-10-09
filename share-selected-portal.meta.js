@@ -2,7 +2,7 @@
 // @author         Mathieu CLAVEL
 // @name           IITC plugin: Share selected portal
 // @category       Controls
-// @version        0.1.1
+// @version        0.1.2
 // @description    Add a share link when a portal is selected
 // @id             share-selected-portal
 // @namespace      https://github.com/IITC-CE/ingress-intel-total-conversion
