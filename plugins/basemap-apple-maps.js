@@ -1,15 +1,15 @@
-// @author         johnd0e
-// @name           Yandex maps
+// @author         dw235
+// @name           Apple Maps
 // @category       Map Tiles
-// @version        0.3.0
-// @description    Add Yandex.com (Russian/Русский) map layers
+// @version        0.1.0
+// @description    Add Apple Maps map layers
 
 
 // use own namespace for plugin
-var mapYandex = {};
-window.plugin.mapYandex = mapYandex;
+var mapAppleMaps = {};
+window.plugin.mapAppleMaps = mapAppleMaps;
 
-mapYandex.types = {
+mapAppleMaps.types = {
   map: {
     type: 'map'
   },
@@ -21,21 +21,21 @@ mapYandex.types = {
   },
 };
 
-mapYandex.options = {
+mapAppleMaps.options = {
   //set this to your API key
   apiParams: '<your API-key>'
 };
 
 function setup () {
-  setupYandexLeaflet();
+  setupAppleMapsLeaflet();
 
-  for (var name in mapYandex.types) {
-    var options = L.extend({}, mapYandex.options, mapYandex.types[name]);
+  for (var name in mapAppleMaps.types) {
+    var options = L.extend({}, mapAppleMaps.options, mapAppleMaps.types[name]);
     layerChooser.addBaseLayer(L.yandex(options), 'Yandex ' + name);
   }
 };
 
-function setupYandexLeaflet () {
+function setupAppleMapsLeaflet () {
 
   try {
     // https://github.com/shramov/leaflet-plugins/blob/master/layer/tile/Yandex.js
