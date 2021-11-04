@@ -10,8 +10,8 @@ var mapAppleMaps = {};
 window.plugin.mapAppleMaps = mapAppleMaps;
 
 mapAppleMaps.types = {
-  map: {
-    type: 'map'
+  default: {
+    type: 'default'
   },
   satellite: {
     type: 'satellite'
@@ -31,20 +31,18 @@ function setup () {
 
   for (var name in mapAppleMaps.types) {
     var options = L.extend({}, mapAppleMaps.options, mapAppleMaps.types[name]);
-    layerChooser.addBaseLayer(L.yandex(options), 'Yandex ' + name);
+    layerChooser.addBaseLayer(L.apple(options), 'Apple Maps ' + name);
   }
 };
 
 function setupAppleMapsLeaflet () {
 
   try {
-    // https://github.com/shramov/leaflet-plugins/blob/master/layer/tile/Yandex.js
-    '@include_raw:external/Yandex.js@';
-
-    '@include_raw:external/Yandex.addon.LoadApi.js@';
+    // https://unpkg.com/leaflet.mapkitmutant@latest/Leaflet.MapkitMutant.js
+    '@include_raw:external/Leaflet.MapkitMutant.js@';
     
     } catch (e) {
-      console.error('Yandex.js loading failed');
+      console.error('Leaflet.MapkitMutant.js loading failed');
       throw e;
     }
 }
