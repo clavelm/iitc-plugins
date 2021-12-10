@@ -19,7 +19,7 @@ if(typeof window.plugin !== 'function') window.plugin = function() {};
 //PLUGIN AUTHORS: writing a plugin outside of the IITC build environment? if so, delete these lines!!
 //(leaving them in place might break the 'About IITC' page or break update checks)
 plugin_info.buildName = 'dw235';
-plugin_info.dateTimeVersion = '2021-12-10-120957';
+plugin_info.dateTimeVersion = '2021-12-10-121605';
 plugin_info.pluginId = 'share-selected-portal';
 //END PLUGIN AUTHORS NOTE
 
