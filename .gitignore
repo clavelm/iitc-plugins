@@ -1,0 +1,8 @@
+/.idea/
+
+# Track dist folder, but not it’s content other than .gitkeep
+/dist/*
+!/dist/.gitkeep
+
+# Ignore python cache
+/__pycache__/
