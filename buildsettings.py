@@ -52,7 +52,7 @@ builds = {  # every build entry extends common defaults
     # },
 
     # 'dw235': {
-    #     'url_dist_base': 'https://github.com/clavelm/iitc-plugins/raw/dist',
+    #     'url_dist_base': 'https://github.com/clavelm/TO_SET/releases/latest/download',
     #     'update_file': '.meta.js',
     #     'version_timestamp': False,
     # },

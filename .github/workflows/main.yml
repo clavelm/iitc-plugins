@@ -1,10 +1,10 @@
-name: Build and Deploy
+name: Build and Release
 on:
   push:
-    branches:
-      - main
+    tags:
+      - "v*.*.*"
 jobs:
-  build-and-deploy:
+  build-and-release:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
@@ -13,8 +13,8 @@ jobs:
       - name: Build 🔧
         run: python3 build_plugin.py --out-dir dist dw235 "plugins/*.js"
 
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@4.1.1
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
         with:
-          branch: dist # The branch the action should deploy to.
-          folder: dist # The folder the action should deploy.
+          files: dist/*.js
