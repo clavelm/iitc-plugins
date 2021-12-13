@@ -53,7 +53,7 @@ def fill_meta(source, plugin_name, dist_path):
                 if not re.match(r'^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(-\w{1,10})?$', value):
                     print(f'{plugin_name}: wrong version format: {value}')  # expected: major.minor.patch
                 elif settings.version_timestamp:  # append timestamp only for well-formed version
-                    line = line.replace(value, '{ver}.{.build_timestamp}'.format(settings, ver=value))
+                    line = line.replace(value, '{ver}-{.build_timestamp}'.format(settings, ver=value))
             elif key == 'name':
                 if value == 'IITC: Ingress intel map total conversion':
                     is_main = True
