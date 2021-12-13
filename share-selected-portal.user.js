@@ -2,12 +2,12 @@
 // @author         Mathieu CLAVEL
 // @name           IITC plugin: Share selected portal
 // @category       Controls
-// @version        0.1.2
+// @version        0.2.0
 // @description    Add a share link when a portal is selected
 // @id             share-selected-portal
 // @namespace      https://github.com/IITC-CE/ingress-intel-total-conversion
-// @updateURL      https://github.com/clavelm/iitc-plugins/raw/dist/share-selected-portal.meta.js
-// @downloadURL    https://github.com/clavelm/iitc-plugins/raw/dist/share-selected-portal.user.js
+// @updateURL      https://github.com/clavelm/iitc-plugin-share-selected-portal/releases/latest/download/share-selected-portal.meta.js
+// @downloadURL    https://github.com/clavelm/iitc-plugin-share-selected-portal/releases/latest/download/share-selected-portal.user.js
 // @match          https://intel.ingress.com/*
 // @grant          none
 // ==/UserScript==
@@ -19,7 +19,7 @@ if(typeof window.plugin !== 'function') window.plugin = function() {};
 //PLUGIN AUTHORS: writing a plugin outside of the IITC build environment? if so, delete these lines!!
 //(leaving them in place might break the 'About IITC' page or break update checks)
 plugin_info.buildName = 'dw235';
-plugin_info.dateTimeVersion = '2021-12-12-214638';
+plugin_info.dateTimeVersion = '2021-12-13-221522';
 plugin_info.pluginId = 'share-selected-portal';
 //END PLUGIN AUTHORS NOTE
 
@@ -66,7 +66,7 @@ a.shareLink {\
 }\
 \
 a.shareLink span {\
-    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeG1sbnM6c3ZnanM9Imh0dHA6Ly9zdmdqcy5jb20vc3ZnanMiIHZlcnNpb249IjEuMSIgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiIHg9IjAiIHk9IjAiIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIgNTEyIiB4bWw6c3BhY2U9InByZXNlcnZlIiBjbGFzcz0iIj48Zz48cGF0aCB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGQ9Im0zOTEgMzMyYy0yNC4xNSAwLTQ2LjEwNyA5LjU2NC02Mi4yODggMjUuMWwtOTYuMjU0LTU5LjYzM2M1LjQ5Mi0xMi43MjggOC41NDItMjYuNzQ3IDguNTQyLTQxLjQ2N3MtMy4wNS0yOC43MzktOC41NDMtNDEuNDY2bDk2LjI1NC01OS42MzNjMTYuMTgyIDE1LjUzNSAzOC4xMzkgMjUuMDk5IDYyLjI4OSAyNS4wOTkgNDkuNjI2IDAgOTAtNDAuMzc0IDkwLTkwcy00MC4zNzQtOTAtOTAtOTAtOTAgNDAuMzc0LTkwIDkwYzAgMTQuNjUxIDMuNTIxIDI4LjQ5NSA5Ljc1OCA0MC43MzJsLTk0LjAwMSA1OC4yMzhjLTE5LjI3Ni0yMy4xODQtNDguMzIxLTM3Ljk3LTgwLjc1Ny0zNy45Ny01Ny44OTcgMC0xMDUgNDcuMTAzLTEwNSAxMDVzNDcuMTAzIDEwNSAxMDUgMTA1YzMyLjQzNiAwIDYxLjQ4MS0xNC43ODYgODAuNzU3LTM3Ljk3bDk0LjAwMSA1OC4yMzhjLTYuMjM3IDEyLjIzNy05Ljc1OCAyNi4wODEtOS43NTggNDAuNzMyIDAgNDkuNjI2IDQwLjM3NCA5MCA5MCA5MHM5MC00MC4zNzQgOTAtOTAtNDAuMzc0LTkwLTkwLTkweiIgZmlsbD0iI2ZmZmZmZiIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgc3R5bGU9IiIgY2xhc3M9IiIvPjwvZz48L3N2Zz4K);\
+    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+DQo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zOnN2Z2pzPSJodHRwOi8vc3ZnanMuY29tL3N2Z2pzIiB2ZXJzaW9uPSIxLjEiIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiB4PSIwIiB5PSIwIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNTEyIDUxMiIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgY2xhc3M9IiI+PGc+PHBhdGggeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBkPSJtMzkxIDMzMmMtMjQuMTUgMC00Ni4xMDcgOS41NjQtNjIuMjg4IDI1LjFsLTk2LjI1NC01OS42MzNjNS40OTItMTIuNzI4IDguNTQyLTI2Ljc0NyA4LjU0Mi00MS40NjdzLTMuMDUtMjguNzM5LTguNTQzLTQxLjQ2Nmw5Ni4yNTQtNTkuNjMzYzE2LjE4MiAxNS41MzUgMzguMTM5IDI1LjA5OSA2Mi4yODkgMjUuMDk5IDQ5LjYyNiAwIDkwLTQwLjM3NCA5MC05MHMtNDAuMzc0LTkwLTkwLTkwLTkwIDQwLjM3NC05MCA5MGMwIDE0LjY1MSAzLjUyMSAyOC40OTUgOS43NTggNDAuNzMybC05NC4wMDEgNTguMjM4Yy0xOS4yNzYtMjMuMTg0LTQ4LjMyMS0zNy45Ny04MC43NTctMzcuOTctNTcuODk3IDAtMTA1IDQ3LjEwMy0xMDUgMTA1czQ3LjEwMyAxMDUgMTA1IDEwNWMzMi40MzYgMCA2MS40ODEtMTQuNzg2IDgwLjc1Ny0zNy45N2w5NC4wMDEgNTguMjM4Yy02LjIzNyAxMi4yMzctOS43NTggMjYuMDgxLTkuNzU4IDQwLjczMiAwIDQ5LjYyNiA0MC4zNzQgOTAgOTAgOTBzOTAtNDAuMzc0IDkwLTkwLTQwLjM3NC05MC05MC05MHoiIGZpbGw9IiNmZmZmZmYiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIHN0eWxlPSIiIGNsYXNzPSIiLz48L2c+PC9zdmc+DQo=);\
     background-size: contain;\
     background-repeat: no-repeat;\
     display: inline-block;\
