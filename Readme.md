@@ -25,7 +25,7 @@ I’ve replaced the text "refresh" by "↻", the refresh is extracted in a funct
 *Updates [Portal Multi Export](https://github.com/modkin/Ingress-IITC-Multi-Export).*  
 The update URL is broken and replacing the content of the plugin by a web page.  
 
-[comm-filter]: https://github.com/clavelm/iitc-plugins/raw/dist/comm-filter.user.js
-[share-selected-portal]: https://github.com/clavelm/iitc-plugins/raw/dist/share-selected-portal.user.js
-[force-refresh]: https://github.com/clavelm/iitc-plugins/raw/dist/force-refresh.user.js
-[portal-multi-export]: https://github.com/clavelm/iitc-plugins/raw/dist/multi-export.user.js
+[comm-filter]: https://github.com/clavelm/iitc-plugins/releases/download/release/comm-filter.user.js
+[share-selected-portal]: https://github.com/clavelm/iitc-plugins/releases/download/release/share-selected-portal.user.js
+[force-refresh]: https://github.com/clavelm/iitc-plugins/releases/download/release/force-refresh.user.js
+[portal-multi-export]: https://github.com/clavelm/iitc-plugins/releases/download/release/multi-export.user.js
