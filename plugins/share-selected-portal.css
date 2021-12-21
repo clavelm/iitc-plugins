@@ -1,0 +1,18 @@
+a.shareLink {
+    float: left;
+    margin: -36px 0 0 -5px;
+    padding: 0 3px 1px 4px;
+    background: #262c32;
+}
+
+a.shareLink span {
+    background-image: url(images/sharing.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: inline-block;
+    float: left;
+    margin: 3px 1px 0 4px;
+    width: 32px;
+    height: 32px;
+    overflow: hidden;
+}
