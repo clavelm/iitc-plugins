@@ -51,17 +51,17 @@ builds = {  # every build entry extends common defaults
     #    'update_file': '.meta.js',
     # },
 
-    # 'dw235': {
-    #     'url_dist_base': 'https://github.com/clavelm/TO_SET/releases/latest/download',
-    #     'update_file': '.meta.js',
-    #     'version_timestamp': False,
-    # },
+    'dw235': {
+        'url_dist_base': 'https://github.com/clavelm/iitc-plugins/releases/download/release',
+        'update_file': '.meta.js',
+        'version_timestamp': False,
+    },
 
-    # 'dw235nightly': {
-    #     'url_dist_base': 'https://github.com/clavelm/TO_SET/releases/download/nightly',
-    #     'update_file': '.meta.js',
-    #     'version_timestamp': True,
-    # },
+    'dw235nightly': {
+        'url_dist_base': 'https://github.com/clavelm/iitc-plugins/releases/download/nightly',
+        'update_file': '.meta.js',
+        'version_timestamp': True,
+    },
 
     'dw235dev': {
         'update_file': '.user.js',
