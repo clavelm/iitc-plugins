@@ -8,9 +8,7 @@
 const SSP = {
 
   // JQuery<HTML Element> that will hold the share link to the selected portal
-  shareLink: $('<a>')
-      .addClass('shareLink')
-      .append('<span>'),
+  shareLink: undefined,
 
   // Append a share link in sidebar.
   showShareLink: () => {
@@ -51,5 +49,9 @@ const setup = () =>  {
 
     window.addHook('portalDetailsUpdated', SSP.showShareLink);
     window.addHook('portalSelected', SSP.removeShareLink);
+
+    SSP.shareLink = $('<a>')
+        .addClass('shareLink')
+        .append('<span>');
   }
 };
