@@ -5,47 +5,51 @@
 // @description    Add a share link when a portal is selected
 
 // use own namespace for plugin
-window.plugin.ssp = function() {};
+const SSP = {
 
-window.plugin.ssp.shareLink = undefined;
-
-// Append a share link in sidebar.
-window.plugin.ssp.onPortalDetailsUpdated = function() {
-
-  var portalGuid = window.selectedPortal;
-
-  if(portalGuid == null) return;
-
-  var data = window.portals[portalGuid].options.data;
-
-  var lat = data.latE6 / 1E6;
-  var lng = data.lngE6 / 1E6;
-  var title = (data && data.title) || 'null';
-
-  var posOnClick = window.showPortalPosLinks.bind(this, lat, lng, title);
-
-  window.plugin.ssp.shareLink.off('click').on('click', posOnClick);
-
-  // Prepend the share link to mobile status-bar
-  $('#updatestatus').prepend(window.plugin.ssp.shareLink);
-
-}
-
-window.plugin.ssp.onPortalSelected = function() {
-  window.plugin.ssp.shareLink.remove();
-}
-
-var setup = function() {
-
-  if (typeof android !== 'undefined' && android && android.intentPosLink) {
-    $('<style>').prop('type', 'text/css').html('@include_css:share-selected-portal.css@').appendTo('head');
-
-    window.addHook('portalDetailsUpdated', window.plugin.ssp.onPortalDetailsUpdated);
-    window.addHook('portalSelected', window.plugin.ssp.onPortalSelected);
-
-    window.plugin.ssp.shareLink = $('<a>')
+  // JQuery<HTML Element> that will hold the share link to the selected portal
+  shareLink: $('<a>')
       .addClass('shareLink')
-      .append('<span>');
-  }
+      .append('<span>'),
 
+  // Append a share link in sidebar.
+  showShareLink: () => {
+
+    const portalGuid = window.selectedPortal;
+
+    if (portalGuid == null) return;
+
+    const data = window.portals[portalGuid].options.data;
+
+    const lat = data.latE6 / 1E6;
+    const lng = data.lngE6 / 1E6;
+    const title = (data && data.title) || 'null';
+
+    const posOnClick = window.showPortalPosLinks.bind(this, lat, lng, title);
+
+    this.shareLink.off('click').on('click', posOnClick);
+
+    // Prepend the share link to mobile status-bar
+    $('#updatestatus').prepend(this.shareLink);
+
+  },
+
+  removeShareLink: () => {
+    this.shareLink.remove();
+  },
+};
+window.plugin.ssp = SSP;
+
+const setup = () =>  {
+  const ANDROID = L.Browser.android;
+
+  if (typeof ANDROID !== 'undefined' && ANDROID) {
+    $('<style>')
+        .prop('type', 'text/css')
+        .html('@include_css:share-selected-portal.css@')
+        .appendTo('head');
+
+    window.addHook('portalDetailsUpdated', SSP.showShareLink);
+    window.addHook('portalSelected', SSP.removeShareLink);
+  }
 };
