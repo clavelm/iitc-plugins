@@ -38,7 +38,9 @@ const SSP = {
 };
 window.plugin.ssp = SSP;
 
-const setup = () =>  {
+// setup function for iitc
+// defined using the var keyword to have a scope outside this file
+var setup = () =>  {
   const ANDROID = L.Browser.android;
 
   if (typeof ANDROID !== 'undefined' && ANDROID) {
