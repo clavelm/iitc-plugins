@@ -8,10 +8,11 @@
 const SSP = {
 
   // JQuery<HTML Element> that will hold the share link to the selected portal
-  shareLink: undefined,
+  // Property defined in setup()
+  // shareLink
 
   // Append a share link in sidebar.
-  showShareLink: () => {
+  onPortalUpdate: () => {
 
     const portalGuid = window.selectedPortal;
 
@@ -32,7 +33,7 @@ const SSP = {
 
   },
 
-  removeShareLink: () => {
+  onPortalSelected: () => {
     this.shareLink.remove();
   },
 };
@@ -49,9 +50,10 @@ var setup = () =>  {
         .html('@include_css:share-selected-portal.css@')
         .appendTo('head');
 
-    window.addHook('portalDetailsUpdated', SSP.showShareLink);
-    window.addHook('portalSelected', SSP.removeShareLink);
+    window.addHook('portalDetailsUpdated', SSP.onPortalUpdate);
+    window.addHook('portalSelected', SSP.onPortalSelected);
 
+    // JQuery<HTML Element> that will hold the share link to the selected portal
     SSP.shareLink = $('<a>')
         .addClass('shareLink')
         .append('<span>');
