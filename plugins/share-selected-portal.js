@@ -11,7 +11,7 @@ const SSP = {
   shareLink: undefined,
 
   // Append a share link in sidebar.
-  onPortalUpdate: () => {
+  onPortalUpdate: function () {
 
     const portalGuid = window.selectedPortal;
 
@@ -32,7 +32,7 @@ const SSP = {
 
   },
 
-  onPortalSelected: () => {
+  onPortalSelected: function () {
     this.shareLink.remove();
   },
 };
