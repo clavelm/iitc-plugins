@@ -23,7 +23,7 @@ const SSP = {
     const lng = data.lngE6 / 1E6;
     const title = (data && data.title) || 'null';
 
-    const posOnClick = window.showPortalPosLinks.bind(this, lat, lng, title);
+    const posOnClick = () => app.intentPosLink(this, lat, lng, window.map.getZoom(), title, true);
 
     this.shareLink.off('click').on('click', posOnClick);
 
@@ -40,10 +40,10 @@ window.plugin.ssp = SSP;
 
 // setup function for iitc
 // defined using the var keyword to have a scope outside this file
-var setup = () =>  {
+var setup = function() {
   const ANDROID = L.Browser.android;
 
-  if (typeof ANDROID !== 'undefined' && ANDROID) {
+  if (typeof ANDROID !== 'undefined' && ANDROID && app.intentPosLink) {
     $('<style>')
         .prop('type', 'text/css')
         .html('@include_css:share-selected-portal.css@')
