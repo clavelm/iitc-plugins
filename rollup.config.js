@@ -1,11 +1,12 @@
-import { babel } from "@rollup/plugin-babel";
+import babel from "@rollup/plugin-babel";
 import resolve from "@rollup/plugin-node-resolve";
 import postcss from "rollup-plugin-postcss";
 import url from "postcss-url";
 
 import path from "path";
 
-import iitcplugin from "./rollup-plugin-iitcplugin";
+import iitcplugin from "./rollup-plugin-iitcplugin.js";
+import { readFileSync } from 'fs';
 
 const buildName = process.env.BUILD;
 
@@ -25,7 +26,7 @@ export default pluginsId.map((p) => ({
   plugins: [
     iitcplugin({
       id: p,
-      meta: require("./" + path.join(pluginsPath, p, "meta.json")),
+      meta: JSON.parse(readFileSync("./" + path.join(pluginsPath, p, "meta.json"), {encoding:"utf8"})),
       downloadRoot: "https://le-jeu.github.io/iitc-plugins/",
       //updateMeta: true,
       timestamp: buildName === "local",
