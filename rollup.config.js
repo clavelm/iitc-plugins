@@ -28,7 +28,7 @@ export default pluginsId.map((p) => ({
       id: p,
       meta: JSON.parse(readFileSync("./" + path.join(pluginsPath, p, "meta.json"), {encoding:"utf8"})),
       downloadRoot: "https://le-jeu.github.io/iitc-plugins/",
-      //updateMeta: true,
+      updateMeta: true,
       timestamp: buildName === "local",
       noWrapper: false,
       buildName: buildName,
