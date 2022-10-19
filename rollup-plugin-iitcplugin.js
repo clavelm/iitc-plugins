@@ -52,9 +52,9 @@ export default function metablock(options = {}) {
     });
   }
 
-  const buildDate = new Date().toISOString();
   if (options.timestamp) {
-    baseConf.version += "-" + buildDate.replace(/[-:]/g, "").slice(0, 15);
+    const buildDate = new Date();
+    baseConf.version += "+" + formatIso8601UTC(buildDate);
   }
 
   if (!options.withoutNamePrefix)
@@ -118,9 +118,25 @@ export default function metablock(options = {}) {
 if(!window.bootPlugins) window.bootPlugins = [];
 window.bootPlugins.push(setup);
 // if IITC has already booted, immediately run the 'setup' function
-if(window.iitcLoaded && typeof setup === 'function') setup();`; 
+if(window.iitcLoaded && typeof setup === 'function') setup();`;
       }
       return null;
     }
   };
+}
+
+/**
+ * Format a date to UTC 20220915T194953Z
+ * @param date Date to format
+ * @returns {string}
+ */
+function formatIso8601UTC(date) {
+  return date.getUTCFullYear().toString().padStart(4, "0")
+    + (date.getUTCMonth() + 1).toString().padStart(2, "0")
+    + date.getUTCDate().toString().padStart(2, "0")
+    + "T"
+    + date.getUTCHours().toString().padStart(2, "0")
+    + date.getUTCMinutes().toString().padStart(2, "0")
+    + date.getUTCSeconds().toString().padStart(2, "0")
+    + "Z";
 }
